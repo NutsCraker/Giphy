@@ -3,6 +3,6 @@ protocol GiphyFactoryDelegate: AnyObject {
     // Успешное получение гифки, необходимо отобразить гифку
     func didRecieveNextGiphy(_ giphy: GiphyModel)
 
-    // Ошибка при загрузке гифки
+    // Ошибка при загрузке гифки Жопа!
     func didReciveError(_ error: GiphyError)
 }
