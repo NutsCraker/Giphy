@@ -20,7 +20,7 @@ final class GiphyFactory: GiphyFactoryProtocol {
         self.mapper = mapper
     }
 
-    // Загрузка гифки
+    // Загрузка гифки 4454
     func requestNextGiphy() {
         urlSession.fetchGiphy { [weak self] result in
             // результат загрузки гифки
