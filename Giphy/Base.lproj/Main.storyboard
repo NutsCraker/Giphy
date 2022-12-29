@@ -7,6 +7,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="YS Display-Medium.ttf">
+            <string>YSDisplay-Medium</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Giphy View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -23,12 +28,83 @@
                                     <constraint firstAttribute="height" constant="20" id="rbH-jk-gGn"/>
                                 </constraints>
                             </activityIndicatorView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Ed3-2V-DdS">
+                                <rect key="frame" x="20" y="79" width="353" height="719"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Lrk-hV-Grb">
+                                        <rect key="frame" x="0.0" y="0.0" width="353" height="23.666666666666668"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Гифка:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VcB-OG-Y1z" userLabel="GiphyLabelName">
+                                                <rect key="frame" x="0.0" y="0.0" width="176.66666666666666" height="23.666666666666668"/>
+                                                <fontDescription key="fontDescription" name="YSDisplay-Medium" family="YS Display" pointSize="20"/>
+                                                <color key="textColor" name="YPWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/10" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t2g-sT-7NY" userLabel="GiphyLabelIndex">
+                                                <rect key="frame" x="176.66666666666663" y="0.0" width="176.33333333333337" height="23.666666666666668"/>
+                                                <fontDescription key="fontDescription" name="YSDisplay-Medium" family="YS Display" pointSize="20"/>
+                                                <color key="textColor" name="YPWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EDD-ul-nje">
+                                        <rect key="frame" x="0.0" y="43.666666666666686" width="353" height="595.33333333333326"/>
+                                        <color key="backgroundColor" name="YPWhite"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="osS-FL-BUf">
+                                        <rect key="frame" x="0.0" y="659" width="353" height="60"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c2O-Qk-gpB" userLabel="Like Button">
+                                                <rect key="frame" x="0.0" y="0.0" width="167" height="60"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="👎" cornerStyle="fixed">
+                                                    <backgroundConfiguration key="background">
+                                                        <color key="backgroundColor" name="YPWhite"/>
+                                                    </backgroundConfiguration>
+                                                </buttonConfiguration>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QU8-JM-OqJ" userLabel="Dislike Button">
+                                                <rect key="frame" x="186" y="0.0" width="167" height="60"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="👍">
+                                                    <backgroundConfiguration key="background">
+                                                        <color key="backgroundColor" name="YPWhite"/>
+                                                    </backgroundConfiguration>
+                                                </buttonConfiguration>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="kayer.cornerRadius">
+                                                        <integer key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="tSu-Hd-p6p"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="YPBlue"/>
                         <constraints>
+                            <constraint firstItem="Ed3-2V-DdS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="PMI-az-zjX"/>
                             <constraint firstItem="ffa-a1-m1O" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="gPf-fu-ZeJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ed3-2V-DdS" secondAttribute="trailing" constant="20" id="h04-MF-xxk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Ed3-2V-DdS" secondAttribute="bottom" constant="20" id="pOk-3S-wU0"/>
                             <constraint firstItem="ffa-a1-m1O" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="sdI-Ke-b5s"/>
+                            <constraint firstItem="Ed3-2V-DdS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ymU-dX-7dH"/>
                         </constraints>
                     </view>
                     <connections>
@@ -40,9 +116,13 @@
             <point key="canvasLocation" x="113.74045801526717" y="3.5211267605633805"/>
         </scene>
     </scenes>
+    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
         <namedColor name="YPBlue">
-            <color red="0.215" green="0.44700000000000001" blue="0.90500000000000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.21500000357627869" green="0.44699999690055847" blue="0.90499997138977051" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="YPWhite">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
